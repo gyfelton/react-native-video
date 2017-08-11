@@ -204,7 +204,7 @@ class ReactExoplayerView extends FrameLayout implements
         if (player == null) {
             TrackSelection.Factory videoTrackSelectionFactory = new AdaptiveTrackSelection.Factory(BANDWIDTH_METER);
             trackSelector = new DefaultTrackSelector(videoTrackSelectionFactory);
-            player = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector, new DefaultLoadControl());
+            player = ExoPlayerFactory.newSimpleInstance(getContext(), trackSelector, new CustomLoadControl());
             player.addListener(this);
             player.setMetadataOutput(this);
             exoPlayerView.setPlayer(player);
